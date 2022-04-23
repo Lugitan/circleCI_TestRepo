@@ -1,13 +1,22 @@
-import { useState } from 'react';
-import logo from './assets/logo.svg';
+import React from 'react';
 import './App.css';
-import Button from './components/Button';
+import { Container } from '@mui/material';
+import ForceGraph from "./components/GraphTest"
+import { CssBaseline } from '@mui/material';
+import data from "./utils/graph.json"
 
 function App() {
-  const [count, setCount] = useState(0);
+  const nodeHoverTooltip = React.useCallback((node) => {
+    return `<div>${node.name}</div>`;
+  }, []);
 
   return (
-    <Button>Button</Button>
+    <React.Fragment>
+      <CssBaseline />
+      <Container>
+        <ForceGraph linksData={data.links} nodesData={data.nodes} nodeHoverTooltip={nodeHoverTooltip} />
+      </Container>
+    </React.Fragment>
   );
 }
 

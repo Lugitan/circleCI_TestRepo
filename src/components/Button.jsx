@@ -1,11 +1,12 @@
+import React from "react";
 import { useState } from "react";
 import { Button } from "@mui/material";
 
-function CustomButton() {
+function CustomButton(props) {
 	const [state, setState] = useState("")
 
 	return (
-		<Button>{Children}</Button>
+		<Button>{props.children}</Button>
 	)
 }
 
