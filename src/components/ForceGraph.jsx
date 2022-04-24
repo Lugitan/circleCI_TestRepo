@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as d3 from 'd3';
+import data from '../utils/miserables.json';
 
 export default function Graph({
   nodes,
@@ -26,8 +27,11 @@ export default function Graph({
   height = 600, // outer height, in pixels
   invalidation, // when this promise resolves, stop the simulation
 }) {
-  if (!nodes || !links) return <div>Please specify links and nodes</div>;
+  nodes = data.nodes;
+  links = data.links;
 
+  if (nodes.length === 0 || links.length === 0) return <div>Please specify links and nodes</div>;
+  
   const ref = useRef();
   const [graph, setGraph] = useState(null);
   
