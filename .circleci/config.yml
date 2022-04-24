@@ -1,4 +1,7 @@
 version: 2.1
+orbs:
+  gcp-gcr: circleci/gcp-gcr@0.6.1
+  cloudrun: circleci/gcp-cloud-run@1.0.0
 jobs:
   build:
     working_directory: ~/repo
@@ -31,7 +34,7 @@ jobs:
           google-compute-zone: GOOGLE_COMPUTE_ZONE
       - gcp-gcr/push-image:
           google-project-id: GOOGLE_PROJECT_ID
-          registry-url: "us.gcr.io"
+          registry-url: "gcr.io"
           image: $IMAGE_NAME
       - cloudrun/deploy:
           platform: "managed"
