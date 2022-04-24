@@ -47,7 +47,7 @@ jobs:
           command: gcloud builds submit --tag gcr.io/hackatum2020/cra-cloud-run
 workflows:
   version: 2
-  build-deploy:
+  gc-workflow:
     jobs:
       - build:
           filters:
