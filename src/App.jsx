@@ -68,7 +68,7 @@ function App() {
           </Box>
         </Stack>
 
-        {selected && <Graph user={selected} links={data.links} nodes={data.nodes} {...config} />}
+        {selected && <Graph selected={selected} links={data.links} nodes={data.nodes} {...config} />}
       </Container>
     </React.Fragment>
   );

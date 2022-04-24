@@ -69,7 +69,7 @@ export default function Test({ setData, setUser }) {
 
         setUser(user);
         setData(graphData);
-        console.log(graphData);
+        // console.log(graphData);
       };
 
       fileReader.readAsText(f);
