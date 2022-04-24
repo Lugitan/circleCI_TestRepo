@@ -3,7 +3,7 @@ orbs:
   gcp-gcr: circleci/gcp-gcr@0.6.1
   cloudrun: circleci/gcp-cloud-run@1.0.0
 jobs:
-  build:
+  buil-and-deploy-gc:
     working_directory: ~/repo
     docker:
       - image: cimg/node:16.13.2
@@ -47,7 +47,7 @@ jobs:
           command: gcloud builds submit --tag gcr.io/hackatum2020/cra-cloud-run
 workflows:
   version: 2
-  gc-workflow:
+  buil-and-deploy-gc-workflow:
     jobs:
       - build:
           filters:
